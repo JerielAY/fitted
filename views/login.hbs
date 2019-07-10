@@ -1,27 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
+<style>
+  .column {
+    max-width: 450px;
+  }
+</style>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css"
-        crossorigin="anonymous" />
-    <link rel='stylesheet' href='/css/style.css' />
-    <title>Login</title>
-</head>
 
-<body>
-    <div class="grid">
-        <script src="\js\ourscript.js"></script>
-        <img id="logo" class="center" src="img/image.png">
-
-        <div id="login" class="ui center input">
-            <input type="text" placeholder="Login...">
+<div class="ui middle aligned center aligned grid">
+  <div class="column">
+    <h2 class="ui image header">
+      <div class="content">
+        Log-in to your account
+      </div>
+    </h2>
+    <form class="ui large form" action="/users/login" method="post">
+      <div class="ui segment">
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            <input type="text" name="username" placeholder="username">
+          </div>
         </div>
-        <a href="home"><button id="login_button" class="ui black button">Login</button></a>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="lock icon"></i>
+            <input type="password" name="password" placeholder="password">
+          </div>
+        </div>
+        <button class="ui fluid large black button" type="submit">Login</button>
+      </div>
+
+      <div class="ui error message"></div>
+
+    </form>
+
+    <div class="ui message">
+      <a href="/users/register">Register Here</a> if it's your first time.
     </div>
-
-</body>
-
-</html>
+  </div>
+</div>
