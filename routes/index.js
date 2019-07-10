@@ -7,7 +7,7 @@ console.log(db)
 /* GET home page. */
 router.get('/', function(req, res, next) {
   // const users = db.users.list()
-  res.render('login', { title: 'Express', users });
+  res.render('login', { title: 'Express'});
 });
 router.get('/home', function(req, res, next) {
   res.render('home', { title: 'Express' });
