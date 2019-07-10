@@ -10,6 +10,10 @@ router.get("/home", function(req, res, next) {
   res.render("home", { title: "Express" });
 });
 
+router.get("/celebfits", function(req, res, next){
+  res.render("celebfits", {title: "Celeb Fits"});
+});
+
 router.get("/login", function(req, res, next) {
   if(req.session.username) {
     res.redirect("/home")
