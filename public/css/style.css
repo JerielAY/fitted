@@ -109,3 +109,9 @@ a {
   height: 100vh;
   padding-left:13%;
 }
+
+#clothesColumn img{
+  height: 100%;
+  width: 50%;
+  padding-top: 5vh;
+}
