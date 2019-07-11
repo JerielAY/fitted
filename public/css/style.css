@@ -54,8 +54,10 @@ a {
 }
 
 #addFitsButton{
-  margin-top: 30%;
-  margin-left: 10%
+  margin-right: auto;
+  margin-left: auto;
+  width: 10%;
+  margin-top: 20%
 }
 
 #content{
