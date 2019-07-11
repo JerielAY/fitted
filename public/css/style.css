@@ -56,7 +56,10 @@ a {
   border-bottom: solid;
   padding-top:5vh;
   display: grid;
+  width:85vw;
   grid-template-columns: auto auto;
+  margin-right:2vh;
+  margin-bottom: 2vh;
 }
 #rightside{
   text-align: center;
@@ -108,10 +111,12 @@ a {
   grid-template-rows: 5vh 95vh;
   height: 100vh;
   padding-left:13%;
+  margin-top: 5vh;
 }
 
 #clothesColumn img{
   height: 100%;
   width: 50%;
   padding-top: 5vh;
+  padding-left: 5vh;
 }
