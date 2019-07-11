@@ -14,6 +14,10 @@ router.get("/celebfits", function(req, res, next){
   res.render("celebfits", {title: "Celeb Fits"});
 });
 
+router.get("/mycloset", function(req, res, next){
+  res.render("mycloset", {title: "My Closet"})
+});
+
 router.get("/login", function(req, res, next) {
   if(req.session.username) {
     res.redirect("/home")
