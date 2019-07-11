@@ -1,0 +1,89 @@
+#!/usr/bin/env node
+
+const { User, Closet } = require("../models");
+
+/**
+ * creates a new user and returns the document with their data from the database
+ * @param username of the user
+ * @param email of the user
+ */
+async function createUser({ username, email }) {
+  return await User.create({ username, email });
+}
+
+/**
+ * creates a closet for a new user.  expects an owner object from Mongo
+ * @param owner object from the database
+ * @returns a new object with the user and their closet
+ */
+async function createCloset({ owner }) {
+  // make a new empty closet that's connected to its owner
+  const closet = await Closet.create({ owner });
+
+  // connect the user object with the new closet
+  const user = await User.findById(owner._id);
+  user.closet = closet;
+  await user.save();
+
+  // return the closet
+  return closet;
+}
+
+/**
+ * register a new user and create an empty closet for them
+ * @param name of the new user
+ * @param email of the new user
+ * @returns object with user and closet properties
+ */
+async function registerNewUser({ name, email }) {
+  const owner = await createUser({ username: name, email });
+  const closet = await createCloset({ owner });
+  return { user, closet }
+}
+
+console.log(registerNewUser({ name: "jeriel2", email: "j@123.com" }));
+
+
+/**
+ * Find a user (who just logged in) and add something to their closet *
+ */
+// User.findOne({ username: "jeriel" }, (err, data) => {
+//   const userId = data._id;
+
+//   Closet.create({ owner: userId }, (err, closet) => {
+//     closet.shirts.push(
+//       {
+//         name: "black vans",
+//         image: "img/blackvans.jpeg",
+//         price: 50
+//       },
+//       {
+//         name: "blue jeans",
+//         image: "img/bluejeans.jpeg",
+//         price: 120
+//       },
+//       {
+//         name: "red t-shirt",
+//         image: "img/redtshirt.jpg"
+//       }
+//     );
+
+//     closet.save(err => {
+//       if (err) {
+//         console.log(err);
+//         return;
+//       }
+//       console.log("saved!");
+//     });
+//   });
+// });
+
+// // let closet1 = new Closet({
+// //     blackvans: "img/blackvans.jpeg",
+// //     bluejeans: "img/bluejeans.jpeg",
+// //     redtshirt: "img/redtshirt.jpg"
+// //   });
+// //   closet1.save(function(err) {
+// //     if (err) return handleError(err);
+// //     // saved!
+// //   });
