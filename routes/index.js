@@ -3,12 +3,16 @@ var router = express.Router();
 
 /* GET home page. */
 router.get("/", function(req, res, next) {
-  res.render("login", { title: "Fitted"});
+  if(req.session.username) {
+    res.render("home", { title: "Fitted", user: req.session.username });
+  } else {
+    res.render("login", { title: "Fitted"});
+  }
 });
 
-router.get("/home", function(req, res, next) {
-  res.render("home", { title: "Fitted" });
-});
+// router.get("/home", function(req, res, next) {
+//   res.render("home", { title: "Fitted", user: req.session.username });
+// });
 
 router.get("/celebfits", function(req, res, next){
   res.render("celebfits", {title: "Celeb Fits"});
@@ -28,14 +32,14 @@ router.get("/camera", function(req, res, next){
 
 router.get("/login", function(req, res, next) {
   if(req.session.username) {
-    res.redirect("/home")
+    res.redirect("/")
   }
   res.render("login", { title: "Fitted Login" });
 });
 
 router.get("/logout", function(req, res, next) {
   req.session.destroy()
-  res.send("this is the logout page");
+  res.redirect("/")
 });
 
 module.exports = router;
