@@ -1,5 +1,8 @@
 var express = require("express");
+var bodyParser = require("body-parser");
 var router = express.Router();
+router.use(bodyParser.json());
+router.use(bodyParser.urlencoded({ extended: false }));
 const { User, Closet } = require("../models");
 
 /* GET users listing. */
@@ -12,14 +15,12 @@ router.get("/register", function(req, res, next) {
 });
 
 router.post("/login", function(req, res, next) {
-  let username = req.body.username
+  let username = req.body.username;
 
   User.findByLogin(username).then(user => {
     if(user) {
       req.session.username = username
-      res.redirect("/home")
-      console.log(`${username} logged in!`)
-
+      res.redirect("/")
     } else {
       res.send(`${username} not found`)
     }
