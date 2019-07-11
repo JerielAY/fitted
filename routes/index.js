@@ -7,7 +7,7 @@ router.get("/", function(req, res, next) {
 });
 
 router.get("/home", function(req, res, next) {
-  res.render("home", { title: "Express" });
+  res.render("home", { title: "Fitted" });
 });
 
 router.get("/login", function(req, res, next) {
