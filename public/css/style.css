@@ -1,6 +1,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
 }
 
 a {
@@ -20,4 +21,56 @@ a {
   width: 25%;
   display: block;
   
+}
+#sidebar{
+  width: 12%;
+}
+#home_logo{
+  margin-right: auto;
+  margin-left: auto;
+  height: 60%;
+  width: 60%;
+}
+#celebs{
+  display:grid;
+  grid-template-columns:auto auto;
+  height: 100vh;
+  width: 90vw;
+}
+#celebs img{
+  justify-self: center;
+}
+#names{
+  display:grid;
+  grid-template-columns:auto auto;
+  height: 5vh;
+  width: 90vw;
+}
+
+#names h1{
+  margin-top: 0;
+  margin-bottom:0;
+  justify-self: center;
+}
+
+#addFitsButton{
+  margin-top: 30%;
+  margin-left: 10%
+}
+
+#content{
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+  display: block;
+}
+
+#wholelogin{
+  padding-top:15%;
+}
+#grid-container{
+  display: grid;
+  grid-template-rows: 5vh 95vh;
+  height: 100vh;
+  padding-left:13%;
 }
