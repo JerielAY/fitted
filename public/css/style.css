@@ -1,6 +1,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
 }
 
 a {
@@ -52,3 +53,24 @@ a {
   justify-self: center;
 }
 
+#addFitsButton{
+  margin-top: 30%;
+  margin-left: 10%
+}
+
+#content{
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+  display: block;
+}
+
+#wholelogin{
+  padding-top:15%;
+}
+#grid-container{
+  display: grid;
+  grid-template-rows: 5vh 95vh;
+  height: 100vh;
+  padding-left:13%;
+}
