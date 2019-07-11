@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const userSchema = new mongoose.Schema({
+const { Schema, model } = require("mongoose");
+const userSchema = new Schema({
   username: {
     type: String,
     unique: true
@@ -7,8 +7,10 @@ const userSchema = new mongoose.Schema({
   email: {
     type: String,
     unique: true
-  }
+  },
+  closet: { type: Schema.Types.ObjectId, ref: 'Closet' }
 });
+
 
 userSchema.statics.findByLogin = async function(login) {
   let user = await this.findOne({
@@ -22,6 +24,6 @@ userSchema.statics.findByLogin = async function(login) {
   return user;
 };
 
-const User = mongoose.model("User", userSchema, "users");
+const User = model("User", userSchema, "users");
 
 module.exports = User;
