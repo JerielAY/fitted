@@ -13,24 +13,13 @@ router.get("/register", function(req, res, next) {
 
 router.post("/login", function(req, res, next) {
   let username = req.body.username
-  /////////////////////////////////////////////////
 
-  // userSchema.statics.findByLogin = async function (login) {
-  //   let user = await this.findOne({
-  //     username: login,
-  //   });
-  
-  //   if (!user) {
-  //     user = await this.findOne({ email: login });
-  //   }
-  
-  //   return user;
-  // };
-  // //////////////////////////////////////////////
   User.findByLogin(username).then(user => {
     if(user) {
       req.session.username = username
-      res.send(`${username} logged in!`)
+      res.redirect("/home")
+      console.log(`${username} logged in!`)
+
     } else {
       res.send(`${username} not found`)
     }
