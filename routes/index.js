@@ -10,9 +10,9 @@ router.get("/", function(req, res, next) {
   }
 });
 
-// router.get("/home", function(req, res, next) {
-//   res.render("home", { title: "Fitted", user: req.session.username });
-// });
+router.get("/home", function(req, res, next) {
+  res.render("home", { title: "Fitted", user: req.session.username });
+});
 
 router.get("/celebfits", function(req, res, next){
   res.render("celebfits", {title: "Celeb Fits"});
