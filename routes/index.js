@@ -18,6 +18,14 @@ router.get("/mycloset", function(req, res, next){
   res.render("mycloset", {title: "My Closet"})
 });
 
+router.get("/fits", function(req, res, next){
+  res.render("fits", {title: "Fits"})
+});
+
+router.get("/camera", function(req, res, next){
+  res.render("camera", {title: "Camera"})
+});
+
 router.get("/login", function(req, res, next) {
   if(req.session.username) {
     res.redirect("/home")
