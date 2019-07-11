@@ -1,12 +1,16 @@
 const mongoose = require("mongoose");
 
 const closetSchema = new mongoose.Schema({
-  image: {
+    name: String,
     type: Object,
-    required: true
-  }
 });
 
-const Closet = mongoose.model("Closet", closetSchema, "closets");
 
-module.exports = Closet;
+const Closet = mongoose.model("Closet", closetSchema, "closets");
+let closet1 = new Closet ({blackvans:"img/blackvans.jpeg", bluejeans:"img/bluejeans.jpeg", redtshirt:"img/redtshirt.jpg"})
+closet1.save(function (err) {
+  if (err) return handleError(err);
+  // saved!
+});
+
+module.exports = Closet,closet1;
