@@ -1,5 +1,8 @@
-  /*///////////////////////////////////////////////////////////(Shout out Eric Bidelman)
-  function hasGetUserMedia() {
+////////////////////////////////////////////////////////////(Shout out Eric Bidelman)
+
+console.log("script.js is not the best name for a file.");
+
+function hasGetUserMedia() {
   return !!(navigator.mediaDevices &&
     navigator.mediaDevices.getUserMedia);
 }
@@ -12,11 +15,11 @@ if (hasGetUserMedia()) {
 
 const video = document.querySelector('video');
 
-navigator.mediaDevices.getUserMedia(constraints).
-  then((stream) => {video.srcObject = stream});
-} else {
-  alert('getUserMedia() is not supported by your browser');
-}
+const userMedia = await navigator.mediaDevices
+  .getUserMedia(constraints)
+  .then((stream) => {
+    video.srcObject = stream
+  });
 
 
 // Wait for the page to be ready
