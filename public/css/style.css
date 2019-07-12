@@ -41,16 +41,15 @@ a {
   grid-template-columns:auto auto;
   height: 60vh;
   width: 85vw;
-  padding-top:12vh;
-  margin-top:1vh;
-  margin-left: 3vh;
-  margin-right: 2vh;
+  padding-top:8vh;
+  margin-left: 23vh;
+  margin-right: 3vh;
   border-right: solid;
   border-top: solid;
   border-left: solid;
 }
 #clothing{
-  margin-left: 3vh;
+  margin-left: 23vh;
   border-left: solid;
   border-right: solid;
   border-bottom: solid;
@@ -76,12 +75,12 @@ a {
   grid-template-columns:42.2vw 42.2vw;
   height: 5vh;
   width: 84.4vw;
-  margin-left:20.5vh;
+  margin-left:7.5vh;
   padding-top:5vh;
 }
 
 #names h1{
-  margin-top: 0;
+  margin-top: 3vh;
   margin-bottom:0;
   text-align: center;
 }
@@ -95,14 +94,12 @@ a {
 #buttonsize{
   width:10vw;
 }
-
 #content{
   margin-left: auto;
   margin-right: auto;
   width: 25%;
   display: block;
 }
-
 #wholelogin{
   padding-top:0;
 }
@@ -113,10 +110,29 @@ a {
   padding-left:13%;
   margin-top: 5vh;
 }
-
 #clothesColumn img{
   height: 100%;
   width: 50%;
   padding-top: 5vh;
   padding-left: 5vh;
+}
+#dafits{
+  display:grid;
+  grid-template-columns:auto auto auto;
+  width:45%;
+}
+#dafits img{
+  height: 70mm;
+  width: 50mm;
+}
+#eachcolumn{
+  margin:30px;
+}
+#eachrow{
+  margin:0;
+  padding:0;
+}
+#FitsTitle{
+  text-align:center;
+  margin-left:90px
 }
