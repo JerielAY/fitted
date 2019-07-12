@@ -1,4 +1,4 @@
-<script> src = "js/ourscript.js" </script>
+
 
 <div id="sidebar" class="ui left demo vertical inverted visible  sidebar labeled icon menu">
   <a class="item">
@@ -22,26 +22,32 @@
   </a>
 </div>
 
-<link rel="stylesheet" href="assets/demo.css">
+<video autoplay></video>
 
-  <script src=".../build/tracking-min.js"></script>
-   <script src=".../node_modules/dat.gui/build/dat.gui.min.js"></script>
-  <script src="tracking/assets/stats.min.js"></script>
-  <script src="tracking/assets/color_camera_gui.js"></script>
+<script>
+  ///////////////////////////////////////////////////////////(Shout out Eric Bidelman)
+  function hasGetUserMedia() {
+  return !!(navigator.mediaDevices &&
+    navigator.mediaDevices.getUserMedia);
+}
 
-  <style>
-  .demo-container {
-    background-color: black;
-  }
-  video, canvas {
-    position: absolute;
-  }
-  </style>
-<link rel="stylesheet" href="styles.css">
-    <script src="tracking-min.js"></script>
-    <script src="script.js"></script>
-\
-    <div class="display">
+if (hasGetUserMedia()) {
+  // Good to go!
+  const constraints = {
+  video: true
+};
+
+const video = document.querySelector('video');
+
+navigator.mediaDevices.getUserMedia(constraints).
+  then((stream) => {video.srcObject = stream});
+} else {
+  alert('getUserMedia() is not supported by your browser');
+}
+
+</script>
+
+ <div class="display">
       <video id="webcam" width="640" height="480" autoplay></video>
       <canvas id="canvas" width="640" height="480"></canvas>
     </div>

@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
 
-const { User, Fit } = require("../models");
+const { User, Fit, Closet } = require("../models");
 
 /* GET home page. */
 router.get("/", function(req, res, next) {
@@ -20,10 +20,16 @@ router.get("/celebfits", function(req, res, next) {
   res.render("celebfits", { title: "Celeb Fits" });
 });
 
-router.get("/mycloset", function(req, res, next) {
-  
-  res.render("mycloset", { title: "My Closet" });
-});
+router.get("/mycloset", async function(req, res, next) {
+  if(req.session.username) {
+    let owner = await User.findByLogin(req.session.username);
+    let shirts = (await Closet.findOne({ owner })).shirts
+    console.log(shirts)
+    res.render("mycloset", { title: "My Closet", shirts });
+  } else {
+    res.redirect("/login")
+  }
+  });
 
 router.get("/fits", async function(req, res, next) {
   if(req.session.username) {
