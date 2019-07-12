@@ -136,3 +136,42 @@ a {
   text-align:center;
   margin-left:90px
 }
+#closetshirts img{
+  width:50mm;
+  height: 70mm;
+  border-style:solid;
+}
+#closetshirts{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  width: 75vw;
+  padding-top:5%;
+}
+#eachshirt{
+  margin: 10px;
+}
+#closetpants{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  width: 75vw;
+  height: 180mm;
+}
+#closetpants img{
+  width:50mm;
+  height: 70mm;
+  border-style:solid;
+}
+#eachpant{
+  margin: 10px;
+}
+#closetshoes{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  width: 75vw;
+  height: 180mm;
+}
+#closetshoes img{
+  width:50mm;
+  height: 70mm;
+  border-style:solid;
+}

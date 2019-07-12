@@ -26,36 +26,30 @@
             <font size="8">My Closet</font>
         </h1>
     </div>
-
-    <div class="ui container">
-        {{#each outfits}}
-        <div class="ui centered three column grid">
-                <div class="ui segment" id="segment">
-                    <div class="image">
-                        <img class="fit-image" src="/img/{{this.shirt.image}}">
-                    </div>
-                    <div class="content">
-                        <a class="header">{{this.shirt.name}}</a>
-                    </div>
-                </div>
-                <div class="ui segment" id="segment">
-                    <div class="image">
-                        <img class="fit-image" src="/img/{{this.pants.image}}">
-                    </div>
-                    <div class="content">
-                        <a class="header">{{this.pants.name}}</a>
-                    </div>
-                </div>
-
-                <div class="ui segment" id="segment">
-                    <div class="image">
-                        <img class="fit-image" src="/img/{{this.shoes.image}}">
-                    </div>
-                    <div class="content">
-                        <a class="header">{{this.shoes.name}}</a>
-                    </div>
-                </div>
-
+    <div id="closetshirts" class="ui container">
+        {{#each shirts}}
+        <div id="eachshirt" class="ui centered three column grid">
+            <div class="image">
+                <img class="fit-image" src="/img/{{this.image}}">
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    <div id="closetpants" class="ui container">
+        {{#each pants}}
+        <div id="eachpant" class="ui centered three column grid">
+            <div class="image">
+                <img class="fit-image" src="/img/{{this.image}}">
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    <div id="closetshoes" class="ui container">
+        {{#each shoes}}
+        <div id="eachpant" class="ui centered three column grid">
+            <div class="image">
+                <img class="fit-image" src="/img/{{this.image}}">
+            </div>
         </div>
         {{/each}}
     </div>
