@@ -21,6 +21,7 @@ router.get("/celebfits", function(req, res, next) {
 });
 
 router.get("/mycloset", function(req, res, next) {
+  
   res.render("mycloset", { title: "My Closet" });
 });
 

@@ -1,17 +1,19 @@
-// Grab elements, create settings, etc.
-var video = document.getElementById('video');
-
-// Get access to the camera!
-// Props to David Walsh 
-if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-    // Not adding `{ audio: true }` since we only want video now
-    console.log("The code is running")
-    navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
-        video.srcObject = stream;
-        video.src = window.URL.createObjectURL(stream);
-        video.play();
-    });
-}
+// // Grab elements, create settings, etc.
+// var video = document.getElementById('video');
+// const mediaSource = new MediaSource();
+// const video = document.createElement('video');
+// video.srcObject = mediaSource;
+// // Get access to the camera!
+// // Props to David Walsh 
+// if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+//     // Not adding `{ audio: true }` since we only want video now
+//     console.log("The code is running")
+//     navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
+//         video.srcObject = stream;
+//         video.src = window.URL.createObjectURL(stream);
+//         video.play();
+//     });
+// }
 
 // // Legacy code below: getUserMedia 
 // else if(navigator.getUserMedia) { // Standard
