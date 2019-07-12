@@ -20,7 +20,8 @@
     "http-errors": "~1.6.3",
     "mongodb": "^3.2.7",
     "mongoose": "^5.6.4",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "tracking": "git+https://github.com/eduardolundgren/tracking.js.git"
   },
   "devDependencies": {
     "nodemon": "^1.19.1"
