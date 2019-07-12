@@ -7,7 +7,7 @@ const closetSchema = new Schema({
   total: Number,
   shirts: [ItemSchema],
   pants: [ItemSchema],
-  shoes: [ItemSchema]
+  shoes:[ItemSchema]
 });
 
 const Closet = model("Closet", closetSchema, "closets");

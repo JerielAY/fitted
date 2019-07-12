@@ -23,12 +23,13 @@ router.get("/celebfits", function(req, res, next) {
 router.get("/mycloset", async function(req, res, next) {
   if(req.session.username) {
     let owner = await User.findByLogin(req.session.username);
-    let shirts = (await Closet.findOne({ owner })).shirts
-    console.log(shirts)
-    res.render("mycloset", { title: "My Closet", shirts });
-  } else {
+    let shirts= (await Closet.findOne({ owner })).shirts
+    let pants= (await Closet.findOne({ owner })).pants
+    let shoes= (await Closet.findOne({ owner })).shoes
+    res.render("mycloset", { title: "My Closet", shirts, pants, shoes});
+  } else{
     res.redirect("/login")
-  }
+  } 
   });
 
 router.get("/fits", async function(req, res, next) {
