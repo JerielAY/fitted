@@ -1,16 +1,16 @@
-const mongoose = require("mongoose");
+const { Schema, model } = require("mongoose");
 
-const closetSchema = new mongoose.Schema({
-    name: String,
-    type: Object,
+const ItemSchema = new Schema({name: String, image: String, price: Number});
+
+const closetSchema = new Schema({
+  owner: { type: Schema.Types.ObjectId, ref: 'User' },
+  total: Number,
+  shirts: [ItemSchema],
+  pants: [ItemSchema],
+  shoes: [ItemSchema]
 });
 
+const Closet = model("Closet", closetSchema, "closets");
 
-const Closet = mongoose.model("Closet", closetSchema, "closets");
-let closet1 = new Closet ({blackvans:"img/blackvans.jpeg", bluejeans:"img/bluejeans.jpeg", redtshirt:"img/redtshirt.jpg"})
-closet1.save(function (err) {
-  if (err) return handleError(err);
-  // saved!
-});
+module.exports = Closet;
 
-module.exports = Closet,closet1;
