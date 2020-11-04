@@ -3,8 +3,18 @@ const mongoose = require("mongoose");
 const Fit = require("./fit");
 const User = require("./user");
 const Closet = require("./closet");
+const DATABASE_URL = "mongodb+srv://fitted:<password>@fitted.dplwo.mongodb.net/<dbname>?retryWrites=true&w=majority";
+mongoose.connect(DATABASE_URL,  { useNewUrlParser: true });
 
-mongoose.connect(process.env.DATABASE_URL,  { useNewUrlParser: true });
+
+// const MongoClient = require('mongodb').MongoClient;
+// const uri = "mongodb+srv://fitted:<password>@fitted.dplwo.mongodb.net/<dbname>?retryWrites=true&w=majority";
+// const client = new MongoClient(uri, { useNewUrlParser: true });
+// client.connect(err => {
+//   const collection = client.db("test").collection("devices");
+//   // perform actions on the collection object
+//   client.close();
+// });
 
 module.exports = {
   User,
